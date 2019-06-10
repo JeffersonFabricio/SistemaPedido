@@ -4,13 +4,18 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.spring.pedido.domain.enums.EstadoPagamento;
 
 @Entity
 public class PagamentoComBoleto extends Pagamento {
+	
 	public static final long serialVersionUID = 1L;
 
+	@JsonFormat(pattern="dd/MM/yyy")
 	private Date dataVencimento;
+	
+	@JsonFormat(pattern="dd/MM/yyy")
 	private Date dataPagamento;
 	
 	public PagamentoComBoleto() {}
