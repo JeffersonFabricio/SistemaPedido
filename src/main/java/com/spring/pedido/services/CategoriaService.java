@@ -31,5 +31,10 @@ public class CategoriaService {
 		obj.setId(null);
 		return rep.save(obj);
 	}
+	
+	public Categoria update(Categoria obj) {
+		find(obj.getId());
+		return rep.save(obj);
+	}
 
 }
