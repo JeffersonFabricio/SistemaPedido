@@ -37,7 +37,7 @@ public class Pedido implements Serializable {
 	private Cliente cliente;
 
 	@ManyToOne
-	@JoinColumn(name = "endereco_de_entrega_id")
+	@JoinColumn(name = "endereco_entrega_id")
 	private Endereco enderecoEntrega;
 
 	@OneToMany(mappedBy="id.pedido")
@@ -56,7 +56,7 @@ public class Pedido implements Serializable {
 	public double getValorTotal() {
 		double soma = 0.0;
 		for (ItemPedido ip : itens) {
-			soma = soma +ip.getSubTotal();
+			soma = soma + ip.getSubTotal();
 		}
 		return soma;
 	}
